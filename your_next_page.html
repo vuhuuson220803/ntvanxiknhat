@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .video-container {
+            width: 80%; /* Chiều rộng của container là 80% của viewport */
+            height: auto; /* Đảm bảo tỷ lệ khung hình không bị méo */
+            display: flex; /* Hiển thị video trong cùng một hàng */
+            justify-content: space-between; /* Cách biệt các video bằng khoảng trắng */
+        }
+
+        video {
+            width: 40%; /* Độ rộng của mỗi video */
+            height: auto; /* Đảm bảo tỷ lệ khung hình không bị méo */
+            object-fit: cover; /* Đảm bảo video không bị căn chỉnh */
+            cursor: pointer; /* Biến con trỏ thành hình bàn tay khi di chuột vào video */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video controls loop onclick="playVideo(this)">
+            <source src="5215539884374.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls loop onclick="playVideo(this)">
+            <source src="5223603090952.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function playVideo(video) {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    </script>
+</body>
+</html>
